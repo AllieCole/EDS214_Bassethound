@@ -20,7 +20,7 @@ prm_data <- RioMameyesPuenteRoto.csv
 ## BQ1 Dataset
 
 ```{r}
-# Read in the data from EDI
+# Read in the data from EDI -- Luquillo LTER
 q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
 ```
 
