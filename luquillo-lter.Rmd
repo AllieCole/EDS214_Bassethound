@@ -6,12 +6,14 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(here)
+library(tidyverse)
 ```
 
 ## PRM Dataset
 
 ```{r}
-
+prm_data <- RioMameyesPuenteRoto.csv
 ```
 
 ## BQ1 Dataset
