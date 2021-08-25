@@ -9,7 +9,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(here)
 library(tidyverse)
 library(lubridate)
-library(janitor)
 ```
 
 ## PRM Dataset
@@ -19,7 +18,8 @@ library(janitor)
 prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/RioMameyesPuenteRoto.csv", na = "-9999")
 #Checked the meta data to make sure units are good 
 prm_subset <- prm_data %>% 
-  select(Sample_Date, Sample_Time, NO3, K) 
+  select(Sample_Date, Sample_ID, NO3, K) %>% 
+  mutate()
 
 #testing
 ```
@@ -37,14 +37,11 @@ q1_data_subset <- q1_data %>%
 ## BQ2 Dataset
 
 ```{r}
-# Wylie Dataset
-
 bq2_df <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca2-Bisley.csv", na = "-9999")
 
+bq2_df
 
-  
-
-# Token Troubleshoot test
+# Token Troubleshoot test 2
 ```
 
 ## BQ3 Dataset
