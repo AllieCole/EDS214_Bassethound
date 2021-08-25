@@ -38,6 +38,6 @@ bq2_df
 ```{r}
 bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
 
-bq3_data_new <-
+bq3_data_new <- s
 ```
 
