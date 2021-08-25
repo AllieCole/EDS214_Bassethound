@@ -1,6 +1,6 @@
 ---
 title: "Luquillo LTER"
-authors: Wylie Hampson, 
+authors: Wylie Hampson, Allie Cole, Grace Lewin, Charles Hendrickson
 output: html_document
 ---
 
