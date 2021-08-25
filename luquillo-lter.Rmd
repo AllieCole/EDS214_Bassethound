@@ -14,22 +14,13 @@ library(lubridate)
 ## PRM Dataset
 
 ```{r}
-# Reading in the data
-prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/RioMameyesPuenteRoto.csv", na = "-9999")
-
-#Checked the meta data to make sure units are good 
-
-prm_subset <- prm_data %>% 
-  select(Sample_Date, Sample_Time, NO3, K)
-
-
-
+prm_data <- RioMameyesPuenteRoto.csv
 ```
 
 ## BQ1 Dataset
 
 ```{r}
-# Read in the data
+# Read in the data from EDI
 q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
 ```
 
@@ -44,6 +35,8 @@ bq2_df
 ## BQ3 Dataset
 
 ```{r}
+bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
 
+bq3_data_new <- s
 ```
 
