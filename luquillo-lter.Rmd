@@ -29,6 +29,7 @@ prm_subset <- prm_data %>%
 ## BQ1 Dataset
 
 ```{r}
+# Read in the data
 q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
 ```
 
