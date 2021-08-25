@@ -45,6 +45,7 @@ bq2_df
 ```{r}
 bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
 
-bq3_data_new <- s
+bq3_subset <- bq3_data %>% 
+  select(Sample_ID, Sample_Date, NO3, K)
 ```
 
