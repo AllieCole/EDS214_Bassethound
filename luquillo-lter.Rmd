@@ -25,6 +25,7 @@ prm_data <- RioMameyesPuenteRoto.csv
 ## BQ2 Dataset
 
 ```{r}
+bq2_df <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca2-Bisley.csv", na = "-9999")
 
 ```
 
