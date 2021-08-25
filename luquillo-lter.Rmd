@@ -20,7 +20,7 @@ prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/RioMameyesPuenteRot
 prm_subset <- prm_data %>% 
   select(Sample_Date, Sample_Time, NO3, K) 
 
-#testingggg
+#testing
 ```
 
 ## BQ1 Dataset
