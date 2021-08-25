@@ -13,7 +13,16 @@ library(tidyverse)
 ## PRM Dataset
 
 ```{r}
-prm_data <- RioMameyesPuenteRoto.csv
+# Reading in the data
+prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/RioMameyesPuenteRoto.csv", na = "-9999")
+
+#Checked the meta data to make sure units are good 
+
+prm_subset <- prm_data %>% 
+  select(Sample_Date, Sample_Time, NO3, K)
+
+
+
 ```
 
 ## BQ1 Dataset
