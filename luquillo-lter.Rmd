@@ -8,6 +8,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(here)
 library(tidyverse)
+library(lubridate)
 ```
 
 ## PRM Dataset
@@ -19,7 +20,7 @@ prm_data <- RioMameyesPuenteRoto.csv
 ## BQ1 Dataset
 
 ```{r}
-
+q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
 ```
 
 ## BQ2 Dataset
