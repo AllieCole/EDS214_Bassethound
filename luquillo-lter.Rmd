@@ -12,41 +12,60 @@ library(lubridate)
 library(janitor)
 ```
 
-## PRM Dataset
+## Import the data
 
 ```{r}
-# Reading in the data
+# PRM Data set
 prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/RioMameyesPuenteRoto.csv", na = "-9999")
+
+# BQ1 Data set
+bq1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
+
+# BQ2 Data set
+bq2_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca2-Bisley.csv", na = "-9999")
+
+# BQ3 Data set
+bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
+```
+
+## Cleaning data
+
+```{r}
 #Checked the meta data to make sure units are good 
 prm_subset <- prm_data %>% 
-  select(Sample_Date, Sample_ID, NO3, K) %>% 
-  mutate()
+  clean_names() %>% 
+  select(sample_date, sample_id, no3, k) %>% 
+  mutate(sample_date = lubridate::mdy(sample_date))
 
-#testing
+bq1_subset <- bq1_data %>% 
+  clean_names() %>% 
+  select(sample_date, sample_id, no3, k) %>% 
+  mutate(sample_date = mdy(sample_date))
+
+bq2_subset <-  bq2_data %>% 
+  clean_names() %>% 
+  select(sample_date, sample_id, no3, k) %>% 
+  mutate(sample_date = mdy_hm(sample_date))
+
+bq3_subset <- bq3_data %>% 
+  clean_names() %>% 
+  select(sample_date, sample_id, no3, k) %>% 
+  mutate(sample_date = mdy(sample_date))
+
 ```
 
-## BQ1 Dataset
+## Join the separate data frames
 
 ```{r}
-# Read in the data from EDI -- Luquillo LTER
-q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
+full_df <- full_join(prm_subset, bq1_subset) %>% 
+  full_join(bq2_subset) %>% 
+  full_join(bq3_subset)
 ```
 
-## BQ2 Dataset
+## Plot the data
 
 ```{r}
-bq2_df <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca2-Bisley.csv", na = "-9999")
 
-bq2_df
-
-# Token Troubleshoot test 2
 ```
 
-## BQ3 Dataset
-
-```{r}
-bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
-
-bq3_data_new <- s
-```
 
