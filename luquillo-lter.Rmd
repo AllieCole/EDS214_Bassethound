@@ -69,10 +69,7 @@ full_df <- full_join(prm_subset, bq1_subset) %>%
 
 ```{r}
 plot_k <- ggplot(data = full_df, aes(x = sample_date, y = k)) +
-<<<<<<< HEAD
-  geom_line(aes(color = sample_id, linetype = sample_id), show.legend = FALSE)
-  # geom_vline(aes(xintercept = as.numeric(1989))
-=======
+
   geom_line(aes(color = sample_id, linetype = sample_id), size = 0.3) + 
   geom_vline(xintercept = as.POSIXct(as.Date("1989-09-10")), linetype = 4) + 
   theme(axis.text.x = element_blank(),
@@ -83,7 +80,6 @@ plot_k <- ggplot(data = full_df, aes(x = sample_date, y = k)) +
         legend.title = element_text("Sample ID"))+
   labs(y = "K mg l\u207b\u00b9", 
        fill = "Sample ID")
->>>>>>> 8f8237234d5ee07c4fb4216fb990e86fb2664116
 
 
 plot_no3 <- ggplot(data = full_df, aes(x = sample_date, y = no3)) +
