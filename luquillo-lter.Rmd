@@ -24,8 +24,17 @@ bq1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bis
 # BQ2 Data set
 bq2_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca2-Bisley.csv", na = "-9999")
 
+<<<<<<< HEAD
 # BQ3 Data set
 bq3_data <- read.csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca3-Bisley.csv", na = "-9999")
+=======
+```{r}
+# Read in the data from EDI -- Luquillo LTER
+q1_data <- read_csv("/courses/EDS214/team_basset_hound/data/QuebradaCuenca1-Bisley.csv", na = "-9999")
+
+q1_data_subset <- q1_data %>% 
+  clean_names()
+>>>>>>> ce71008b609b272733d84fcfa0433e29bca9ad47
 ```
 
 ## Cleaning data
@@ -66,6 +75,13 @@ full_df <- full_join(prm_subset, bq1_subset) %>%
 
 ```{r}
 
+<<<<<<< HEAD
+=======
+bq3_subset <- bq3_data %>% 
+  select(Sample_ID, Sample_Date, NO3, K)
+
+y = "taylor token check" 
+>>>>>>> ce71008b609b272733d84fcfa0433e29bca9ad47
 ```
 
 
