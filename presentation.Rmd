@@ -31,31 +31,75 @@ knitr::include_graphics("./figs/Image from iOS.jpg")
 
 ## Github Token Issues
 
+#### - Server cache time-outs
+
+#### - Tried regenerating tokens
+.center[
+```{r echo = FALSE, out.width = '35%'}
+knitr::include_graphics('https://c.tenor.com/-bmg7ZdDvpYAAAAd/adorable-basset-hound-makes-silly-faces-smile.gif')
+```
+]
+---
+## Some Other Issues
+#### - Pull/Push Issues
+
+#### - Branches?
+
+.center[
+```{r echo = FALSE, out.width = '60%'}
+knitr::include_graphics('https://c.tenor.com/c_P0z92D7coAAAAC/aristocats-dog.gif')
+```
+]
+---
+
+## Pair programming
+
+#### - Best method for this project.
+
+#### - Encouraged collaboration!
+
+.center[
+```{r echo = FALSE, out.width = '45%'}
+knitr::include_graphics('https://c.tenor.com/lCBo1z7Den0AAAAd/sleeping-dog-viralhog.gif')
+```
+]
 
 ---
 
-### Pull/Push Issues
+## Prepping the data
+#### - Importing
 
-### Branches?
+>```
+>prm_data <- read_csv("/courses/EDS214/team_basset_hound/data/
+>            RioMameyesPuenteRoto.csv", na = "-9999")
+>```
+
+#### - Cleaning
+
+>```
+>prm_subset <- prm_data %>%
+>  clean_names() %>% 
+>  select(sample_date, sample_id, no3, k) %>% 
+>  mutate(sample_date = lubridate::mdy(sample_date))
+>```
+
+#### - Merging
+
+>```
+>full_df <- full_join(prm_subset, bq1_subset) %>% 
+>  full_join(bq2_subset) %>% 
+>  full_join(bq3_subset) %>% 
+>  filter(year(sample_date) >= 1988 & year(sample_date) <= 1995)
+>```
+
 
 ---
 
-### Pair programming
+## Creating the plot
 
 ---
 
-### Prepping the data
-#### Importing
-#### Cleaning
-#### Merging
-
----
-
-### Creating the plot
-
----
-
-### Making the presentation
+## Making the presentation
 
 
 

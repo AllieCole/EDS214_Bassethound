@@ -37,31 +37,69 @@ class: center, middle
 
 ## Github Token Issues
 
+#### - Server cache time-outs
+
+#### - Tried regenerating tokens
+.center[
+&lt;img src="https://c.tenor.com/-bmg7ZdDvpYAAAAd/adorable-basset-hound-makes-silly-faces-smile.gif" width="35%" /&gt;
+]
+---
+## Some Other Issues
+#### - Pull/Push Issues
+
+#### - Branches?
+
+.center[
+&lt;img src="https://c.tenor.com/c_P0z92D7coAAAAC/aristocats-dog.gif" width="60%" /&gt;
+]
+---
+
+## Pair programming
+
+#### - Best method for this project.
+
+#### - Encouraged collaboration!
+
+.center[
+&lt;img src="https://c.tenor.com/lCBo1z7Den0AAAAd/sleeping-dog-viralhog.gif" width="45%" /&gt;
+]
 
 ---
 
-### Pull/Push Issues
+## Prepping the data
+#### - Importing
 
-### Branches?
+&gt;```
+&gt;prm_data &lt;- read_csv("/courses/EDS214/team_basset_hound/data/
+&gt;            RioMameyesPuenteRoto.csv", na = "-9999")
+&gt;```
+
+#### - Cleaning
+
+&gt;```
+&gt;prm_subset &lt;- prm_data %&gt;%
+&gt;  clean_names() %&gt;% 
+&gt;  select(sample_date, sample_id, no3, k) %&gt;% 
+&gt;  mutate(sample_date = lubridate::mdy(sample_date))
+&gt;```
+
+#### - Merging
+
+&gt;```
+&gt;full_df &lt;- full_join(prm_subset, bq1_subset) %&gt;% 
+&gt;  full_join(bq2_subset) %&gt;% 
+&gt;  full_join(bq3_subset) %&gt;% 
+&gt;  filter(year(sample_date) &gt;= 1988 &amp; year(sample_date) &lt;= 1995)
+&gt;```
+
 
 ---
 
-### Pair programming
+## Creating the plot
 
 ---
 
-### Prepping the data
-#### Importing
-#### Cleaning
-#### Merging
-
----
-
-### Creating the plot
-
----
-
-### Making the presentation
+## Making the presentation
 
 
 
