@@ -20,9 +20,12 @@ class: center, middle
 
 ### Shout out to Archie and MaGoo
 ---
-
+.center[
 ## Our Workflow Plan
-![](./figs/Image from iOS.jpg)
+```{r echo = FALSE, out.width= '50%'}
+knitr::include_graphics("./figs/Image from iOS.jpg")
+```
+]
 
 ---
 
