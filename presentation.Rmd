@@ -140,8 +140,22 @@ knitr::include_graphics('./figs/final_plot.jpg')
 
 #### - We tried using Xarnigan!
 
-#### - Had some issues
+#### - Had some issues, but it worked!
 
+.pull-left[
+```{r, echo = FALSE, out.width = '100%'}
+knitr::include_graphics('./figs/IMG_0349.JPG')
+
+```
+]
+
+.pull-right[
+```{r, echo = FALSE, out.width = '150%'}
+
+knitr::include_graphics('./figs/IMG_0293.JPG')
+
+```
+]
 
 
 
