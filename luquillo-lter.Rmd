@@ -74,10 +74,8 @@ plot_k <- ggplot(data = full_df, aes(x = sample_date, y = k)) +
   geom_vline(xintercept = as.POSIXct(as.Date("1989-09-10")), linetype = 4) + 
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank(),
-        plot.margin = margin(0, 0, 0, 0, "cm"), 
         panel.background = element_blank(), 
-        panel.grid.major = element_line(color = "light grey"), 
-        legend.title = element_text("Sample ID"))+
+        panel.grid.major = element_line(color = "light grey")) +
   labs(y = "K mg l\u207b\u00b9", 
        color = "Site",
        linetype = "Site")
