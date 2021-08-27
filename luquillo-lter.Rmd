@@ -79,7 +79,8 @@ plot_k <- ggplot(data = full_df, aes(x = sample_date, y = k)) +
         panel.grid.major = element_line(color = "light grey"), 
         legend.title = element_text("Sample ID"))+
   labs(y = "K mg l\u207b\u00b9", 
-       fill = "Sample ID")
+       color = "Sample ID",
+       linetype = "Sample ID")
 
 
 plot_no3 <- ggplot(data = full_df, aes(x = sample_date, y = no3)) +
