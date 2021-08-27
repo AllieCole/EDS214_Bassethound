@@ -90,7 +90,9 @@ plot_no3 <- ggplot(data = full_df, aes(x = sample_date, y = no3)) +
         panel.grid.major = element_line(color = "light grey")) 
   
 
-(plot_k / plot_no3) 
+final_plot <- (plot_k / plot_no3) 
+
+ggsave(here::here("figs", "final_plot.jpg"), plot = final_plot, height = 4, width = 7)
   
 ```
 

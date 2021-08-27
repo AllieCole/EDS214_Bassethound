@@ -69,33 +69,66 @@ class: center, middle
 ## Prepping the data
 #### - Importing
 
-&gt;```
-&gt;prm_data &lt;- read_csv("/courses/EDS214/team_basset_hound/data/
-&gt;            RioMameyesPuenteRoto.csv", na = "-9999")
-&gt;```
-
+  ```
+  prm_data &lt;- read_csv("/courses/EDS214/team_basset_hound/data/
+              RioMameyesPuenteRoto.csv", na = "-9999")
+  ```
+  
 #### - Cleaning
 
-&gt;```
-&gt;prm_subset &lt;- prm_data %&gt;%
-&gt;  clean_names() %&gt;% 
-&gt;  select(sample_date, sample_id, no3, k) %&gt;% 
-&gt;  mutate(sample_date = lubridate::mdy(sample_date))
-&gt;```
+  ```
+  prm_subset &lt;- prm_data %&gt;%
+    clean_names() %&gt;% 
+    select(sample_date, sample_id, no3, k) %&gt;% 
+    mutate(sample_date = lubridate::mdy(sample_date))
+  ```
 
 #### - Merging
 
-&gt;```
-&gt;full_df &lt;- full_join(prm_subset, bq1_subset) %&gt;% 
-&gt;  full_join(bq2_subset) %&gt;% 
-&gt;  full_join(bq3_subset) %&gt;% 
-&gt;  filter(year(sample_date) &gt;= 1988 &amp; year(sample_date) &lt;= 1995)
-&gt;```
-
+  ```
+  full_df &lt;- full_join(prm_subset, bq1_subset) %&gt;% 
+    full_join(bq2_subset) %&gt;% 
+    full_join(bq3_subset) %&gt;% 
+    filter(year(sample_date) &gt;= 1988 &amp; year(sample_date) &lt;= 1995)
+  ```
 
 ---
 
 ## Creating the plot
+
+
+```r
+plot_k &lt;- ggplot(data = full_df, aes(x = sample_date, y = k)) +
+  geom_line(aes(color = sample_id, linetype = sample_id), size = 0.3) + 
+  geom_vline(xintercept = as.POSIXct(as.Date("1989-09-10")), linetype = 4) + 
+  theme(axis.text.x = element_blank(),
+       axis.title.x = element_blank(),
+       panel.background = element_blank(), 
+       panel.grid.major = element_line(color = "light grey")) +
+  labs(y = "K mg l\u207b\u00b9", 
+      color = "Site",
+      linetype = "Site")
+
+plot_no3 &lt;- ggplot(data = full_df, aes(x = sample_date, y = no3)) +
+  geom_line(aes(color = sample_id, linetype = sample_id), show.legend = FALSE, size = 0.3) + 
+  geom_vline(xintercept = as.POSIXct(as.Date("1989-09-10")), linetype = 4) +
+  labs(x = "Date", 
+       y = "NO\u2083\u2010N \u00b5g l\u207b\u00b9") + 
+  theme(panel.background = element_blank(), 
+        panel.grid.major = element_line(color = "light grey")) 
+```
+
+
+---
+
+## Our Graph
+
+
+```r
+knitr::include_graphics('./figs/final_plot.jpg')
+```
+
+![](./figs/final_plot.jpg)&lt;!-- --&gt;
 
 ---
 
